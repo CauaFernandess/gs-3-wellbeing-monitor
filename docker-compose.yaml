@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  gs_3_wellbeing_monitor:
+    image: cauafernandess/gs-3-wellbeing-monitor:latest
+    ports:
+      - 8081:8081
+    restart: unless-stopped

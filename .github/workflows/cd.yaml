@@ -14,12 +14,9 @@ jobs:
       - name: Login no DockerHub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_TOKEN }}
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: cauafernandess/gs-3-wellbeing-monitor:latest
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Construção da Imagem
+        run: docker build -t cauafernandess/gs-3-wellbeing-monitor:latest .
+      - name: Push da Imagem no DockerHub
+        run: docker push cauafernandess/gs-3-wellbeing-monitor:latest

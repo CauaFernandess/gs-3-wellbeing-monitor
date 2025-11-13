@@ -5,13 +5,9 @@
 - Felipe Pereira Meschiatti (RM551978)
 
 ## Tema
-Nome do Tema
 
-## Descrição
-Uma explicação textual sobre o tema.
+Ferramentas de monitoramento de bem-estar e saúde men
 
-## Finalidade da API
-API REST para consulta de informações do tema do grupo, sem banco de dados, utilizando Java + Spring Boot.
 
 ## Como rodar o projeto localmente
 1. Certifique-se de ter o Java 17 instalado.

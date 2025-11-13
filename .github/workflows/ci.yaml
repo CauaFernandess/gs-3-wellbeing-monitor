@@ -1,0 +1,21 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - feature/**
+      - release
+      - hotfix
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build da Aplicacao
+        run: mvn clean package -DskipTests
+      - name: Execução de Testes Unitários
+        run: mvn test
+      - name: Teste da Criacao da imagem
+        run: docker build -t cauafernandess/gs-3-wellbeing-monitor .
